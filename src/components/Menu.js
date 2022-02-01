@@ -30,6 +30,7 @@ const Menu = ({ loadingProducts, loadingCategories, data, error }) => {
         error={error}
         component={Product}
         list={data.products}
+        allergens={data.allergens}
       />
     )
   }

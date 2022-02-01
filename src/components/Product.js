@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Figure } from 'react-bootstrap'
-const Product = ({ item }) => (
+import AllergenList from './AllergenList'
+import { getProductAllergens } from '../utils/utils'
+const Product = ({ item, allergens }) => (
   <div className='row shadow rounded m-3 py-2'>
     <div className='col-7'>
       <p>{item.name}</p>
@@ -18,11 +20,13 @@ const Product = ({ item }) => (
       />
       <p>$100</p>
     </div>
+    <AllergenList list={getProductAllergens(allergens, item)} />
   </div>
 )
 
 Product.propTypes = {
   item: PropTypes.object,
+  allergens: PropTypes.array,
 }
 
 export default Product

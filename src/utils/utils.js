@@ -1,1 +1,5 @@
-export const getProductsByCategory = (data) => data.products
+export const getCategoryProducts = (products, categoryId) =>
+  products?.filter((product) => product.categories.includes(categoryId))
+
+export const getProductAllergens = (allergens, product) =>
+  allergens?.filter((allergen) => product.allergens.includes(allergen._id))

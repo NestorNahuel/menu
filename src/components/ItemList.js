@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ItemList = ({ component: Component, list, loading, error, onClick }) => {
+const ItemList = ({ component: Component, list, loading, error, ...props }) => {
   // Show loading spinner
   if (loading) {
     return <p>loading...</p>
@@ -15,7 +15,7 @@ const ItemList = ({ component: Component, list, loading, error, onClick }) => {
   // Render the list if Items
   if (!!list?.length && !error) {
     return list.map((item, index) => (
-      <Component key={index} item={item} onClick={onClick} />
+      <Component key={index} item={item} {...props} />
     ))
   }
 
