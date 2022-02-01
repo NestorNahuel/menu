@@ -16,7 +16,7 @@ const Header = ({ label = 'Menu', onReturn }) => {
   }
 
   return (
-    <div className='row pt-3 px-3 mb-3 bg-success text-white'>
+    <div className='fixed-top position-sticky row pt-3 px-3 mb-3 bg-success text-white'>
       <div className='mb-2 col mt-1'>
         <h1>{label}</h1>
       </div>
