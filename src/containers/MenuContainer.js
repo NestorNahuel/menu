@@ -1,4 +1,4 @@
-import Menu from '../components/Menu'
+import Menu from '../components/menu/Menu'
 import { MenuProvider } from '../contexts/menuContext'
 import { firestore } from '../firebase/firebase'
 import useQueryData from '../hooks/useQueryData'

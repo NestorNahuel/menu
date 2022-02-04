@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import ItemList from './ItemList'
-import Category from './Category'
-import Product from './Product'
-import Header from './Header'
-import { useMenu } from '../contexts/menuContext'
+import ItemList from '../common/ItemList'
+import Category from '../categories/Category'
+import Product from '../products/Product'
+import Header from '../header/Header'
+import { useMenu } from '../../contexts/menuContext'
 
 const Menu = () => {
   // agregar el fade in y pade up wrapeando el itemlist

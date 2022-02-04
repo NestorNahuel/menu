@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Figure } from 'react-bootstrap'
-import AllergenList from './AllergenList'
-import { getProductAllergens } from '../utils/utils'
-import { useMenu } from '../contexts/menuContext'
+import AllergenList from '../allergens/AllergenList'
+import { getProductAllergens } from '../../utils/utils'
+import { useMenu } from '../../contexts/menuContext'
 const Product = ({ item }) => {
   const { allergens } = useMenu()
 
