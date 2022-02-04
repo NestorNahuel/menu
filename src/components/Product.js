@@ -22,7 +22,7 @@ const Product = ({ item }) => {
           height={120}
           src={item.image}
         />
-        <p>$100</p>
+        {item.price && <p>{'€' + item.price}</p>}
       </div>
       <AllergenList list={getProductAllergens(allergens, item)} />
     </div>
