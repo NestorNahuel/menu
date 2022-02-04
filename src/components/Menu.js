@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import ItemList from './ItemList'
 import Category from './Category'
 import Product from './Product'
 import Header from './Header'
+import { useMenu } from '../contexts/menuContext'
 
-const Menu = ({ loadingProducts, loadingCategories, data, error }) => {
+const Menu = () => {
   // agregar el fade in y pade up wrapeando el itemlist
+
+  const menuData = useMenu()
 
   const [category, setCategory] = useState(null)
 
@@ -15,10 +17,10 @@ const Menu = ({ loadingProducts, loadingCategories, data, error }) => {
     if (!category) {
       return (
         <ItemList
-          loading={loadingCategories}
-          error={error}
+          loading={menuData.loadingCategories}
+          error={menuData.error}
           component={Category}
-          list={data.categories}
+          list={menuData.categories}
           onClick={(category) => setCategory(category)}
         />
       )
@@ -26,11 +28,10 @@ const Menu = ({ loadingProducts, loadingCategories, data, error }) => {
     // Render the product list if there is a selected category
     return (
       <ItemList
-        loading={loadingProducts}
-        error={error}
+        loading={menuData.loadingProducts}
+        error={menuData.error}
         component={Product}
-        list={data.products}
-        allergens={data.allergens}
+        list={menuData.products}
       />
     )
   }
@@ -43,13 +44,6 @@ const Menu = ({ loadingProducts, loadingCategories, data, error }) => {
       {renderItemList()}
     </div>
   )
-}
-
-Menu.propTypes = {
-  loadingProducts: PropTypes.bool,
-  loadingCategories: PropTypes.bool,
-  data: PropTypes.object,
-  error: PropTypes.bool,
 }
 
 export default Menu

@@ -1,4 +1,5 @@
 import Menu from '../components/Menu'
+import { MenuProvider } from '../contexts/menuContext'
 import { firestore } from '../firebase/firebase'
 import useQueryData from '../hooks/useQueryData'
 import { COLL_ALLERGEN, COLL_CATEGORY, COLL_PRODUCT } from '../utils/constants'
@@ -13,14 +14,14 @@ const MenuContainer = () => {
     products: productsQuery.data,
     categories: categoriesQuery.data,
     allergens: allergensQuery.data,
+    loadingCategories: categoriesQuery.isLoading,
+    loadingProducts: productsQuery.isLoading || allergensQuery.isLoading,
   }
 
   return (
-    <Menu
-      data={data}
-      loadingCategories={categoriesQuery.isLoading}
-      loadingProducts={productsQuery.isLoading || allergensQuery.isLoading}
-    />
+    <MenuProvider value={data}>
+      <Menu />
+    </MenuProvider>
   )
 }
 
