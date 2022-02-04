@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Spinner from './Spinner'
 import Message from './Message'
+import FadeIn from 'react-fade-in'
 
 const ItemList = ({ component: Component, list, loading, error, ...props }) => {
   // Show loading spinner
@@ -16,9 +17,11 @@ const ItemList = ({ component: Component, list, loading, error, ...props }) => {
 
   // Render the list if Items
   if (!!list?.length && !error) {
-    return list.map((item, index) => (
-      <Component key={index} item={item} {...props} />
-    ))
+    const render = () =>
+      list.map((item, index) => (
+        <Component key={index} item={item} {...props} />
+      ))
+    return <FadeIn>{render()}</FadeIn>
   }
 
   // Show error message
