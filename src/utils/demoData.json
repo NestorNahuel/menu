@@ -38,6 +38,7 @@
       ],
       "categories": ["4K4T3ugnZkZWrheX6G3r"],
       "name": "ENSALADA CÉSAR",
+      "description": "LECHUGA, TOMATE CHERRY, PICATOSTES, PECHUGA DE POLLO A LA PLANCHA, QUESO PARMESANO Y SALSA CESAR",
       "price": "100",
       "_id": "YHXcfzMZomzJwwA5ThFg"
     },
@@ -50,7 +51,7 @@
       "_id": "uo70QL7bnpNjhOZCWBAJ"
     },
     {
-      "name": "ENSALADA MEDITERRÁNEA CLÁSICA",
+      "name": "ENSALADA MEDITERRÁNEA CLÁSICA 2",
       "categories": ["4K4T3ugnZkZWrheX6G3r"],
       "allergens": ["N46um0cjjFeUCnCHFOVE", "GaHK2ETnkW4pu7tFmc2K"],
       "image": "https://estaticos.miarevista.es/media/cache/760x570_thumb/uploads/images/recipe/5d1de76b5bafe804b488438c/ensaladamediterranea-int.jpg",

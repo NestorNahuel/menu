@@ -7,13 +7,26 @@ import { useMenu } from '../contexts/menuContext'
 const Product = ({ item }) => {
   const { allergens } = useMenu()
 
+  const renderDescription = () => {
+    if (item.description) {
+      return (
+        <Figure.Caption className='mb-2'>{item.description}</Figure.Caption>
+      )
+    }
+    return <AllergenList list={getProductAllergens(allergens, item)} />
+  }
+
+  const renderObservations = () => {
+    if (item.description) {
+      return <AllergenList list={getProductAllergens(allergens, item)} />
+    }
+  }
+
   return (
     <div className='row shadow rounded m-3 py-2'>
       <div className='col-7'>
         <p>{item.name}</p>
-        <Figure.Caption>
-          Nulla vitae elit libero, a pharetra augue mollis interdum.
-        </Figure.Caption>
+        {renderDescription()}
       </div>
       <div className='col-5'>
         <Figure.Image
@@ -24,7 +37,7 @@ const Product = ({ item }) => {
         />
         {item.price && <p>{'€' + item.price}</p>}
       </div>
-      <AllergenList list={getProductAllergens(allergens, item)} />
+      {renderObservations()}
     </div>
   )
 }
