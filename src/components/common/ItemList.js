@@ -4,7 +4,14 @@ import Spinner from './Spinner'
 import Message from './Message'
 import FadeIn from 'react-fade-in'
 
-const ItemList = ({ component: Component, list, loading, error, ...props }) => {
+const ItemList = ({
+  component: Component,
+  list,
+  loading,
+  error,
+  t,
+  ...props
+}) => {
   // Show loading spinner
   if (loading) {
     return <Spinner />
@@ -12,7 +19,7 @@ const ItemList = ({ component: Component, list, loading, error, ...props }) => {
 
   // Show no data message when the list is empty
   if (!list?.length && !error) {
-    return <Message message={'There are not items to show'} />
+    return <Message message={t('There are not items to show')} />
   }
 
   // Render the list if Items
@@ -25,7 +32,7 @@ const ItemList = ({ component: Component, list, loading, error, ...props }) => {
   }
 
   // Show error message
-  return <Message message={'There was an error'} />
+  return <Message message={t('There was an error')} />
 }
 
 ItemList.propTypes = {
@@ -34,6 +41,7 @@ ItemList.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.bool,
   onClick: PropTypes.func,
+  t: PropTypes.func,
 }
 
 export default ItemList

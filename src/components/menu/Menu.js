@@ -6,8 +6,6 @@ import Header from '../header/Header'
 import { useMenu } from '../../contexts/menuContext'
 
 const Menu = () => {
-  // agregar el fade in y pade up wrapeando el itemlist
-
   const menuData = useMenu()
 
   const [category, setCategory] = useState(null)

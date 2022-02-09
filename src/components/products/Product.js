@@ -4,13 +4,14 @@ import { Figure } from 'react-bootstrap'
 import AllergenList from '../allergens/AllergenList'
 import { getProductAllergens } from '../../utils/utils'
 import { useMenu } from '../../contexts/menuContext'
-const Product = ({ item }) => {
+import { withTranslation } from 'react-i18next'
+const Product = ({ item, t }) => {
   const { allergens } = useMenu()
 
   const renderDescription = () => {
     if (item.description) {
       return (
-        <Figure.Caption className='mb-2'>{item.description}</Figure.Caption>
+        <Figure.Caption className='mb-2'>{t(item.description)}</Figure.Caption>
       )
     }
     return <AllergenList list={getProductAllergens(allergens, item)} />
@@ -25,7 +26,7 @@ const Product = ({ item }) => {
   return (
     <div className='row shadow rounded m-3 py-2'>
       <div className='col-7'>
-        <p>{item.name}</p>
+        <p>{t(item.name)}</p>
         {renderDescription()}
       </div>
       <div className='col-5'>
@@ -45,6 +46,7 @@ const Product = ({ item }) => {
 Product.propTypes = {
   item: PropTypes.object,
   allergens: PropTypes.array,
+  t: PropTypes.func,
 }
 
-export default Product
+export default withTranslation('common')(Product)
