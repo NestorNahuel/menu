@@ -9,12 +9,13 @@ const ItemList = ({
   list,
   loading,
   error,
+  centered,
   t,
   ...props
 }) => {
   // Show loading spinner
   if (loading) {
-    return <Spinner />
+    return <Spinner centered={centered} />
   }
 
   // Show no data message when the list is empty
@@ -28,6 +29,17 @@ const ItemList = ({
       list.map((item, index) => (
         <Component key={index} item={item} {...props} />
       ))
+
+    if (centered) {
+      return (
+        <div className='vh-100 d-flex align-items-center'>
+          <div className='w-100'>
+            <FadeIn>{render()}</FadeIn>
+          </div>
+        </div>
+      )
+    }
+
     return <FadeIn>{render()}</FadeIn>
   }
 
@@ -40,7 +52,7 @@ ItemList.propTypes = {
   list: PropTypes.array,
   loading: PropTypes.bool,
   error: PropTypes.bool,
-  onClick: PropTypes.func,
+  centered: PropTypes.bool,
   t: PropTypes.func,
 }
 

@@ -4,7 +4,7 @@ import ItemList from '../common/ItemList'
 import LanguageItem from './LanguageItem'
 import MenuContainer from '../../containers/MenuContainer'
 
-const LanguageSelector = ({ list, loading, error, changeLanguage }) => {
+const LanguageSelector = ({ list, changeLanguage }) => {
   const [isSelected, setIsSelected] = useState(false)
 
   const selectLanguage = (lang) => {
@@ -15,7 +15,7 @@ const LanguageSelector = ({ list, loading, error, changeLanguage }) => {
   useEffect(() => {
     // If there are no languages just continue
     if (!list?.length) {
-      isSelected(true)
+      setIsSelected(true)
     }
 
     // If there are only one language select it
@@ -30,9 +30,8 @@ const LanguageSelector = ({ list, loading, error, changeLanguage }) => {
       <ItemList
         component={LanguageItem}
         list={list}
-        loading={loading}
-        error={error}
         onClick={selectLanguage}
+        centered={true}
       />
     )
   }
@@ -43,8 +42,6 @@ const LanguageSelector = ({ list, loading, error, changeLanguage }) => {
 
 LanguageSelector.propTypes = {
   list: PropTypes.array,
-  loading: PropTypes.bool,
-  error: PropTypes.bool,
   changeLanguage: PropTypes.func,
 }
 

@@ -51,7 +51,7 @@ const LanguageContainer = () => {
   }, [translationsQuery.isLoading])
 
   if (loading) {
-    return <Spinner />
+    return <Spinner centered={true} />
   }
 
   const changeLanguage = (lng) => {
