@@ -12,6 +12,19 @@
 
 - https://github.com/i18next/react-i18next
 
+## Configuration
+
+Create a .env file with your firestore data
+
+```
+  REACT_APP_MENU_FIREBASE_API_KEY = "AIzaSyA94cc4idXTwLMM48LUiX3rohkhijBTGY0"
+  REACT_APP_MENU_FIREBASE_AUTH_DOMAIN = "ram-firebase-test.firebaseapp.com"
+  REACT_APP_MENU_FIREBASE_PROJECT_ID = "ram-firebase-test"
+  REACT_APP_MENU_FIREBASE_STORAGE_BUCKET = "ram-firebase-test.appspot.com"
+  REACT_APP_MENU_FIREBASE_MESSAGING_SENDER_ID = "1097411446808"
+  REACT_APP_MENU_FIREBASE_APP_ID = "1:1097411446808:web:662390f23c1662146b1b6d"
+```
+
 ## Data structure
 
 - `Languages`
