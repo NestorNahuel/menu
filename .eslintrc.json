@@ -35,5 +35,8 @@
       "pragma": "React",
       "version": "detect"
     }
+  },
+  "globals": {
+    "process": true
   }
 }
