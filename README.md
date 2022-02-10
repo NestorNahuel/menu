@@ -2,13 +2,80 @@
 
 ## Documentation
 
-Please use Eslint + Prettier
+- `Please use Eslint + Prettier`
 
-https://react-query-firebase.invertase.dev/firestore/querying-collections
+- https://react-query-firebase.invertase.dev/firestore/querying-collections
 
-https://www.npmjs.com/package/react-gsap
+- https://www.npmjs.com/package/react-gsap
 
-https://react-bootstrap.github.io/
+- https://react-bootstrap.github.io/
+
+- https://github.com/i18next/react-i18next
+
+## Data structure
+
+- `Languages`
+
+  Languages data structure:
+
+  ```
+  {
+      en: {
+        common: {
+          hi: 'Hello'
+        }
+      },
+      es: {
+        common: {
+          hi: 'Hola'
+        }
+      }
+  }
+  ```
+
+  Should have at least one language.
+
+  If there is only one language, the language selection list will not appear
+
+- `Products`
+
+  Array of objects with this structure
+
+  ```
+  {
+    "image": "https://www.image.com/1.jpg",
+    "allergens": ["GaHK2ETnkW4pu7tFmc2K"],
+    "categories": ["4K4T3ugnZkZWrheX6G3r"],
+    "name": "Product 1",
+    "description": "Product description",
+    "price": "100",
+    "_id": "YHXcfzMZomzJwwA5ThFg"
+  }
+  ```
+
+- `Categories`
+
+  Array of objects with this structure
+
+  ```
+  {
+    "name": "Catname 1",
+    "image": "https://www.image.com/10.jpg",
+    "_id": "4K4T3ugnZkZWrheX6G3r"
+  }
+  ```
+
+- `Allergens`
+
+  Array of objects with this structure
+
+  ```
+  {
+    "name": "Allergen 1",
+    "image": "https://www.image.com/100.jpg",
+    "_id": "GaHK2ETnkW4pu7tFmc2K"
+  }
+  ```
 
 ## Available Scripts
 
