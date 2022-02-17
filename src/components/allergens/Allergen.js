@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Image } from 'react-bootstrap'
+import Tooltip from '../common/Tooltip'
 
 const Allergen = ({ allergen }) => (
-  <Image src={allergen.image} width='45' height='45' fluid />
+  <Tooltip label={allergen.name}>
+    <Image src={allergen.image} width='45' height='45' fluid />
+  </Tooltip>
 )
 
 Allergen.propTypes = {
