@@ -61,6 +61,7 @@ Create a .env file with your firestore data
     "image": "https://www.image.com/1.jpg",
     "allergens": ["GaHK2ETnkW4pu7tFmc2K"],
     "categories": ["4K4T3ugnZkZWrheX6G3r"],
+    "subcategory": "4K4T3ugnZkZWrheX6G3r",
     "name": "Product 1",
     "description": "Product description",
     "price": "100",
@@ -76,6 +77,8 @@ Create a .env file with your firestore data
   {
     "name": "Catname 1",
     "image": "https://www.image.com/10.jpg",
+    "price": 50,
+    "description": "Category Description",
     "_id": "4K4T3ugnZkZWrheX6G3r"
   }
   ```
