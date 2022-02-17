@@ -35,11 +35,13 @@ Create a .env file with your firestore data
   {
       en: {
         common: {
+          languageName: 'English',
           hi: 'Hello'
         }
       },
       es: {
         common: {
+          languageName: 'Spanish',
           hi: 'Hola'
         }
       }
