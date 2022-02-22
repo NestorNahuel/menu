@@ -34,11 +34,13 @@ const Menu = () => {
     )
   }
 
-  const onReturn = category && (() => setCategory(null))
-
   return (
     <div>
-      <Header label={category?.name} onReturn={onReturn} />
+      <Header
+        label={category?.name}
+        category={category}
+        setCategory={setCategory}
+      />
       {renderItemList()}
     </div>
   )

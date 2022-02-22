@@ -3,25 +3,28 @@ import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next'
 import HeaderButton from '../common/HeaderButton'
 
-const Header = ({ label = 'Menu', onReturn, t }) => {
+const Header = ({ label = 'Menu', category, setCategory, t }) => {
   return (
-    <div className='mw-100 fixed-top position-sticky row pt-3 px-2 mb-3 bg-success text-white'>
-      <HeaderButton
-        onClick={onReturn}
-        hidden={!onReturn}
-        icon='bi-arrow-left-circle'
-      />
-      <div className='mb-2 col mt-1'>
-        <h1>{t(label)}</h1>
+    <div className='bg-success'>
+      <div className='mw-100 fixed-top position-sticky row pt-3 px-2 mb-3 text-white'>
+        <HeaderButton
+          onClick={() => setCategory(null)}
+          hidden={!category}
+          icon='bi-arrow-left-circle'
+        />
+        <div className='mb-2 col mt-1'>
+          <h1>{t(label)}</h1>
+        </div>
       </div>
-      <HeaderButton onClick={onReturn} icon='bi-globe2' />
+      <div className='inline'></div>
     </div>
   )
 }
 
 Header.propTypes = {
   label: PropTypes.string,
-  onReturn: PropTypes.func,
+  category: PropTypes.string,
+  setCategory: PropTypes.func,
   t: PropTypes.func,
 }
 
