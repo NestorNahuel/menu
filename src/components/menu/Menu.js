@@ -4,11 +4,13 @@ import Category from '../categories/Category'
 import Product from '../products/Product'
 import Header from '../header/Header'
 import { useMenu } from '../../contexts/menuContext'
+import LanguageModal from '../languages/LanguageModal'
 
 const Menu = () => {
   const menuData = useMenu()
 
   const [category, setCategory] = useState(null)
+  const [showLanguageSelector, setShowLanguageSelector] = useState(false)
 
   const renderItemList = () => {
     // Render the category list if there is not a category selected
@@ -36,10 +38,15 @@ const Menu = () => {
 
   return (
     <div>
+      <LanguageModal
+        showed={showLanguageSelector}
+        hide={() => setShowLanguageSelector(false)}
+      />
       <Header
         label={category?.name}
         category={category}
         setCategory={setCategory}
+        showLanguageSelector={() => setShowLanguageSelector(true)}
       />
       {renderItemList()}
     </div>

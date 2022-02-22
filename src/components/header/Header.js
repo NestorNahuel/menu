@@ -3,7 +3,13 @@ import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next'
 import HeaderButton from '../common/HeaderButton'
 
-const Header = ({ label = 'Menu', category, setCategory, t }) => {
+const Header = ({
+  label = 'Menu',
+  category,
+  setCategory,
+  showLanguageSelector,
+  t,
+}) => {
   return (
     <div className='bg-success'>
       <div className='mw-100 fixed-top position-sticky row pt-3 px-2 mb-3 text-white'>
@@ -15,6 +21,7 @@ const Header = ({ label = 'Menu', category, setCategory, t }) => {
         <div className='mb-2 col mt-1'>
           <h1>{t(label)}</h1>
         </div>
+        <HeaderButton icon='bi-globe2' onClick={showLanguageSelector} />
       </div>
       <div className='inline'></div>
     </div>
@@ -25,6 +32,7 @@ Header.propTypes = {
   label: PropTypes.string,
   category: PropTypes.string,
   setCategory: PropTypes.func,
+  showLanguageSelector: PropTypes.func,
   t: PropTypes.func,
 }
 

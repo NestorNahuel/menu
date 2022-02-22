@@ -5,7 +5,8 @@ import { COLL_TRANSLATIONS, DEFAULT_LANG } from '../utils/constants'
 import { I18nextProvider } from 'react-i18next'
 import i18next from 'i18next'
 import Spinner from '../components/common/Spinner'
-import LanguageSelector from '../components/languages/LanguageSelector'
+import { LanguageProvider } from '../contexts/languageContext'
+import MenuContainer from './MenuContainer'
 
 const LanguageContainer = () => {
   const translationsQuery = useQueryData(COLL_TRANSLATIONS, firestore)
@@ -60,7 +61,9 @@ const LanguageContainer = () => {
 
   return (
     <I18nextProvider i18n={i18next}>
-      <LanguageSelector list={languageList} changeLanguage={changeLanguage} />
+      <LanguageProvider value={[languageList, changeLanguage]}>
+        <MenuContainer />
+      </LanguageProvider>
     </I18nextProvider>
   )
 }
