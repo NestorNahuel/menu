@@ -11,23 +11,29 @@ const LanguageModal = ({ showed, hide, t }) => {
     changeLanguage(lang)
     hide()
   }
+
+  const languages = Object.keys(languageList).map((key) => ({
+    slug: key,
+    label: languageList[key],
+  }))
+
+  const show = showed && languages?.length > 1
+  !show && hide()
+
   return (
     <Modal
-      show={showed}
+      show={show}
       onHide={hide}
       aria-labelledby='contained-modal-title-vcenter'
       centered
     >
       <Modal.Header closeButton>
         <Modal.Title id='contained-modal-title-vcenter'>
-          {t('Select the language')}
+          {t('selectLang')}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <LanguageSelector
-          list={languageList}
-          changeLanguage={onChangeLanguage}
-        />
+        <LanguageSelector list={languages} changeLanguage={onChangeLanguage} />
       </Modal.Body>
     </Modal>
   )

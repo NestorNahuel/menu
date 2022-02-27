@@ -4,7 +4,7 @@ import { withTranslation } from 'react-i18next'
 import HeaderButton from '../common/HeaderButton'
 
 const Header = ({
-  label = 'Menu',
+  label = 'headerLabel',
   category,
   setCategory,
   showLanguageSelector,
@@ -21,7 +21,11 @@ const Header = ({
         <div className='mb-2 col mt-1'>
           <h1>{t(label)}</h1>
         </div>
-        <HeaderButton icon='bi-globe2' onClick={showLanguageSelector} />
+        <HeaderButton
+          onClick={showLanguageSelector}
+          hidden={!showLanguageSelector}
+          icon='bi-globe2'
+        />
       </div>
       <div className='inline'></div>
     </div>

@@ -35,14 +35,20 @@ Create a .env file with your firestore data
   {
       en: {
         common: {
-          languageName: 'English',
-          hi: 'Hello'
+          "languageName": "English",
+          "loadingError": "There was an error",
+          "noData": "Data not found",
+          "headerLabel": "Menu",
+          "selectLang": "Select language"
         }
       },
       es: {
         common: {
-          languageName: 'Spanish',
-          hi: 'Hola'
+          "languageName": "Spanish",
+          "loadingError": "Ocurrió un error al cargar los datos",
+          "noData": "No hay items para mostrar",
+          "headerLabel": "NUESTRA CARTA",
+          "selectLang": "Seleccione su lenguaje"
         }
       }
   }

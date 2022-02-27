@@ -1,0 +1,9 @@
+{
+  "common": {
+    "languageName": "Spanish",
+    "loadingError": "Ocurrió un error al cargar los datos",
+    "noData": "No hay items para mostrar",
+    "headerLabel": "NUESTRA CARTA",
+    "selectLang": "Seleccione su lenguaje"
+  }
+}

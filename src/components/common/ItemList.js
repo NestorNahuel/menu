@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Spinner from './Spinner'
 import Message from './Message'
 import FadeIn from 'react-fade-in'
+import { withTranslation } from 'react-i18next'
 
 const ItemList = ({
   component: Component,
@@ -20,7 +21,7 @@ const ItemList = ({
 
   // Show no data message when the list is empty
   if (!list?.length && !error) {
-    return <Message message={t('There are not items to show')} />
+    return <Message message={t('noData')} />
   }
 
   // Render the list if Items
@@ -44,7 +45,7 @@ const ItemList = ({
   }
 
   // Show error message
-  return <Message message={t('There was an error')} />
+  return <Message message={t('loadingError')} />
 }
 
 ItemList.propTypes = {
@@ -56,4 +57,4 @@ ItemList.propTypes = {
   t: PropTypes.func,
 }
 
-export default ItemList
+export default withTranslation('common')(ItemList)

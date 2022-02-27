@@ -5,12 +5,14 @@ import Product from '../products/Product'
 import Header from '../header/Header'
 import { useMenu } from '../../contexts/menuContext'
 import LanguageModal from '../languages/LanguageModal'
+import { useLanguage } from '../../contexts/languageContext'
 
 const Menu = () => {
   const menuData = useMenu()
 
   const [category, setCategory] = useState(null)
   const [showLanguageSelector, setShowLanguageSelector] = useState(false)
+  const [languageList] = useLanguage()
 
   const renderItemList = () => {
     // Render the category list if there is not a category selected
@@ -36,6 +38,11 @@ const Menu = () => {
     )
   }
 
+  const onClickOnLanguageIcon =
+    Object.keys(languageList).length > 1
+      ? () => setShowLanguageSelector(true)
+      : null
+
   return (
     <div>
       <LanguageModal
@@ -46,7 +53,7 @@ const Menu = () => {
         label={category?.name}
         category={category}
         setCategory={setCategory}
-        showLanguageSelector={() => setShowLanguageSelector(true)}
+        showLanguageSelector={onClickOnLanguageIcon}
       />
       {renderItemList()}
     </div>

@@ -7,6 +7,7 @@ import i18next from 'i18next'
 import Spinner from '../components/common/Spinner'
 import { LanguageProvider } from '../contexts/languageContext'
 import MenuContainer from './MenuContainer'
+import spanish from '../locale/spanish.json'
 
 const LanguageContainer = () => {
   const translationsQuery = useQueryData(COLL_TRANSLATIONS, firestore)
@@ -25,13 +26,16 @@ const LanguageContainer = () => {
         }
       }
     */
-    let data = {}
-    let headers = []
+    let data = { es: spanish }
+    let headers = { es: spanish.common.languageName }
     translations.forEach((translation) => {
-      // Build the formatted language list
-      data[translation._id] = { common: translation }
-      // Build the language headers for the language selector
-      headers.push({ label: translation.languageName, slug: translation._id })
+      const languageName = translation.languageName
+      if (languageName) {
+        // Build the formatted language list
+        data[translation._id] = { common: translation }
+        // Build the language headers for the language selector
+        headers[translation._id] = languageName
+      }
     })
     return { data, headers }
   }
