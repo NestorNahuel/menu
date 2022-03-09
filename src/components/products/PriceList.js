@@ -10,10 +10,10 @@ const PriceList = ({ list }) => {
         }}
       >
         <p
+          className='mb-1'
           style={{
             border: 'none',
             borderBottom: '0.8px dashed',
-            fontSize: '1em',
             minHeight: '1.3em',
             maxHeight: '1em',
           }}
@@ -23,8 +23,9 @@ const PriceList = ({ list }) => {
       </td>
       <td>
         <p
+          className='mb-0'
           style={{
-            fontSize: '1.5em',
+            fontSize: '1.3em',
             fontWeight: '500',
           }}
         >

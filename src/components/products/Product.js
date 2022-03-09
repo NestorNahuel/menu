@@ -34,7 +34,13 @@ const Product = ({ item, t }) => {
       <table>
         <tbody>
           <tr>
-            <td>{t(item.name)}</td>
+            <td
+              style={{
+                fontWeight: '500',
+              }}
+            >
+              {t(item.name)}
+            </td>
             <td rowSpan='3'>
               <Figure.Image
                 className='mb-2'
