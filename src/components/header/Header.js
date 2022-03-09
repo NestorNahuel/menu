@@ -12,14 +12,14 @@ const Header = ({
 }) => {
   return (
     <div className='bg-success'>
-      <div className='mw-100 fixed-top position-sticky row pt-3 px-2 mb-3 text-white'>
+      <div className='mw-100 fixed-top position-sticky row pt-2 px-0 text-white'>
         <HeaderButton
           onClick={() => setCategory(null)}
           hidden={!category}
           icon='bi-arrow-left-circle'
         />
-        <div className='mb-2 col mt-1'>
-          <h1>{t(label)}</h1>
+        <div className='col mt-2 px-0'>
+          <h2>{t(label)}</h2>
         </div>
         <HeaderButton
           onClick={showLanguageSelector}

@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 const HeaderButton = ({ icon, ...props }) => (
   <div className='col-2 p-0'>
     <Button variant='link' {...props}>
-      <h1 className={'text-white bi ' + icon}></h1>
+      <h2 className={'text-white bi ' + icon}></h2>
     </Button>
   </div>
 )
