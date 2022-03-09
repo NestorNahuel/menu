@@ -6,7 +6,7 @@ import { withTranslation } from 'react-i18next'
 
 const Allergen = ({ allergen, t }) => (
   <Tooltip label={t(allergen.name)}>
-    <Image src={allergen.image} width='45' height='45' fluid />
+    <Image src={allergen.image} width='40' height='40' fluid />
   </Tooltip>
 )
 
