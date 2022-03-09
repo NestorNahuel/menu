@@ -70,7 +70,16 @@ Create a .env file with your firestore data
     "subcategory": "4K4T3ugnZkZWrheX6G3r",
     "name": "Product 1",
     "description": "Product description",
-    "price": "100",
+    "prices": [
+      {
+        description: "Basic product",
+        price: "100"
+      },
+      {
+        description: "XXL Product",
+        price: "150"
+      }
+    ],
     "_id": "YHXcfzMZomzJwwA5ThFg"
   }
   ```
