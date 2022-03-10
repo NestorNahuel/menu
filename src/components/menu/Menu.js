@@ -6,6 +6,7 @@ import Header from '../header/Header'
 import { useMenu } from '../../contexts/menuContext'
 import LanguageModal from '../languages/LanguageModal'
 import { useLanguage } from '../../contexts/languageContext'
+import { getCategoryProducts } from '../../utils/utils'
 
 const Menu = () => {
   const menuData = useMenu()
@@ -33,7 +34,7 @@ const Menu = () => {
         loading={menuData.loadingProducts}
         error={menuData.error}
         component={Product}
-        list={menuData.products}
+        list={getCategoryProducts(menuData.products, category._id)}
       />
     )
   }
