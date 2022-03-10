@@ -34,7 +34,10 @@ const Menu = () => {
         loading={menuData.loadingProducts}
         error={menuData.error}
         component={Product}
-        list={getCategoryProducts(menuData.products, category._id)}
+        list={getCategoryProducts(
+          [...menuData.products, ...menuData.products, ...menuData.products],
+          category._id
+        )}
       />
     )
   }
