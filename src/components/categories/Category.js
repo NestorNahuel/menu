@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { withTranslation } from 'react-i18next'
 
 const Category = ({ item, onClick, t }) => (
-  <div onClick={() => onClick(item)} className='card m-3'>
+  <div onClick={() => onClick(item)} className='card shadow m-3'>
     <img
       className='card-img rounded'
       style={{ height: '10em' }}
