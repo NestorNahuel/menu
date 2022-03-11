@@ -1,28 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Button, Figure } from 'react-bootstrap'
 import { withTranslation } from 'react-i18next'
 
 const Category = ({ item, onClick, t }) => (
-  <div className='d-grid gap-2 m-3'>
-    <Button
-      className='p-1'
-      size='lg'
-      onClick={() => onClick(item)}
-      variant='outline-success'
+  <div onClick={() => onClick(item)} className='card m-3'>
+    <img
+      className='card-img rounded'
+      style={{ height: '10em' }}
+      src={item.image}
+    />
+    <div
+      style={{ backgroundColor: 'rgba(61, 61, 61, 0.5)' }}
+      className='card-img-overlay text-white d-flex align-items-end'
     >
-      <div className='row'>
-        <div className='col-8'>{t(item.name)}</div>
-        <div className='col-4'>
-          <Figure.Image
-            className='m-0'
-            width={100}
-            height={100}
-            src={item.image}
-          />
-        </div>
-      </div>
-    </Button>
+      <h1>{t(item.name)}</h1>
+    </div>
   </div>
 )
 
