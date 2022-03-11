@@ -44,7 +44,7 @@ const Header = ({
 
 Header.propTypes = {
   label: PropTypes.string,
-  category: PropTypes.string,
+  category: PropTypes.object,
   setCategory: PropTypes.func,
   showLanguageSelector: PropTypes.func,
   t: PropTypes.func,

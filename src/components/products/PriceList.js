@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const PriceList = ({ list }) => {
-  const renderPrice = (price) => (
-    <tr>
+  const renderPrice = (price, index) => (
+    <tr key={index}>
       <td
         style={{
           width: '65%',
