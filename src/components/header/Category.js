@@ -4,11 +4,9 @@ import { Button } from 'react-bootstrap'
 
 const Category = ({ selected, categoryName, onClick }) => (
   <Button
-    href='#'
-    variant='secondary'
+    variant={selected && 'dark'}
     size='sm'
-    disabled={selected}
-    className='p-1 text-nowrap'
+    className='m-1 p-1 text-nowrap'
     onClick={onClick}
   >
     {categoryName}

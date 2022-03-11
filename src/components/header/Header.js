@@ -15,8 +15,13 @@ const Header = ({
   const menuData = useMenu()
 
   return (
-    <div className='bg-success position-sticky fixed-top'>
-      <div className='mw-100 d-flex justify-content-between pt-2 text-white'>
+    <div
+      className='position-sticky fixed-top'
+      style={{
+        backgroundColor: '#ECEAEA',
+      }}
+    >
+      <div className='mw-100 d-flex justify-content-between pt-2'>
         <HeaderButton
           onClick={() => setCategory(null)}
           hidden={!category}
