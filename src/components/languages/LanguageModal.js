@@ -18,7 +18,6 @@ const LanguageModal = ({ showed, hide, t }) => {
   }))
 
   const show = showed && languages?.length > 1
-  !show && hide()
 
   return (
     <Modal
