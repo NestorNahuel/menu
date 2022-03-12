@@ -37,6 +37,7 @@ const Product = ({ item, t }) => {
             <td
               style={{
                 fontWeight: '500',
+                width: '65%',
               }}
             >
               {t(item.name)}
