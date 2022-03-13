@@ -7,6 +7,7 @@ import { useMenu } from '../../contexts/menuContext'
 import LanguageModal from '../languages/LanguageModal'
 import { useLanguage } from '../../contexts/languageContext'
 import { getCategoryProducts } from '../../utils/utils'
+import CategoryHeader from '../categories/CategoryHeader'
 
 const Menu = () => {
   const menuData = useMenu()
@@ -14,6 +15,12 @@ const Menu = () => {
   const [category, setCategory] = useState(null)
   const [showLanguageSelector, setShowLanguageSelector] = useState(false)
   const [languageList] = useLanguage()
+
+  const renderCategoryHeader = () => {
+    if (category?.description || category?.price) {
+      return <CategoryHeader category={category} />
+    }
+  }
 
   const renderItemList = () => {
     // Render the category list if there is not a category selected
@@ -30,15 +37,18 @@ const Menu = () => {
     }
     // Render the product list if there is a selected category
     return (
-      <ItemList
-        loading={menuData.loadingProducts}
-        error={menuData.error}
-        component={Product}
-        list={getCategoryProducts(
-          [...menuData.products, ...menuData.products, ...menuData.products],
-          category._id
-        )}
-      />
+      <>
+        {renderCategoryHeader()}
+        <ItemList
+          loading={menuData.loadingProducts}
+          error={menuData.error}
+          component={Product}
+          list={getCategoryProducts(
+            [...menuData.products, ...menuData.products, ...menuData.products],
+            category._id
+          )}
+        />
+      </>
     )
   }
 
