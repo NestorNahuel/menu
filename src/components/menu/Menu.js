@@ -8,6 +8,7 @@ import LanguageModal from '../languages/LanguageModal'
 import { useLanguage } from '../../contexts/languageContext'
 import { getCategoryProducts } from '../../utils/utils'
 import CategoryHeader from '../categories/CategoryHeader'
+import ProductList from '../products/ProductList'
 
 const Menu = () => {
   const menuData = useMenu()
@@ -39,11 +40,11 @@ const Menu = () => {
     return (
       <>
         {renderCategoryHeader()}
-        <ItemList
+        <ProductList
           loading={menuData.loadingProducts}
           error={menuData.error}
           component={Product}
-          list={getCategoryProducts(
+          productList={getCategoryProducts(
             [...menuData.products, ...menuData.products, ...menuData.products],
             category._id
           )}
