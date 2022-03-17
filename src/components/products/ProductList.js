@@ -38,8 +38,10 @@ const ProductList = ({ productList, loading, error, ...props }) => {
     return renderProductList(productList)
   }
 
-  return productsCategoriesId.map((key) =>
-    renderProductSubList(subcategoryGroups[key][0], productGroups[key])
+  return productsCategoriesId.map(
+    (key) =>
+      subcategoryGroups[key] &&
+      renderProductSubList(subcategoryGroups[key][0], productGroups[key])
   )
 }
 
