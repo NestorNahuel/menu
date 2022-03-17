@@ -4,9 +4,9 @@ import { withTranslation } from 'react-i18next'
 
 const SubcategoryHeader = ({ subcategory, t }) => (
   <div
-    className='px-1 m-2'
+    className='px-1 m-2 w-75'
     style={{
-      backgroundColor: '#C7C6C6',
+      backgroundColor: '#E8E7E7',
     }}
   >
     <table className='w-75'>

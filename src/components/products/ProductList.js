@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ItemList from '../common/ItemList'
 import { useMenu } from '../../contexts/menuContext'
 import { groupListByKey } from '../../utils/utils'
+import SubcategoryHeader from '../subcategories/SubcategoryHeader'
 
 const ProductList = ({ productList, loading, error, ...props }) => {
   const { subcategories } = useMenu()
@@ -11,7 +12,9 @@ const ProductList = ({ productList, loading, error, ...props }) => {
     <ItemList loading={loading} error={error} list={list} {...props} />
   )
 
-  const renderSubCategoryHeader = () => <p>subcategory</p>
+  const renderSubCategoryHeader = (subcategory) => (
+    <SubcategoryHeader subcategory={subcategory} />
+  )
 
   const renderProductSubList = (subcategory, subList) => (
     <>
@@ -36,7 +39,7 @@ const ProductList = ({ productList, loading, error, ...props }) => {
   }
 
   return productsCategoriesId.map((key) =>
-    renderProductSubList(subcategoryGroups[key], productGroups[key])
+    renderProductSubList(subcategoryGroups[key][0], productGroups[key])
   )
 }
 
