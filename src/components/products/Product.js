@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Figure } from 'react-bootstrap'
+import { Figure, Image } from 'react-bootstrap'
 import AllergenList from '../allergens/AllergenList'
 import { getProductAllergens } from '../../utils/utils'
 import { useMenu } from '../../contexts/menuContext'
@@ -12,7 +12,14 @@ const Product = ({ item, t }) => {
   const renderDescription = () => {
     if (item.description) {
       return (
-        <Figure.Caption className='mb-2'>{t(item.description)}</Figure.Caption>
+        <Figure.Caption
+          style={{
+            fontSize: '0.8em',
+          }}
+          className='mb-2'
+        >
+          {t(item.description)}
+        </Figure.Caption>
       )
     }
   }
@@ -30,7 +37,7 @@ const Product = ({ item, t }) => {
   }
 
   return (
-    <div className='row shadow rounded p-2 m-3'>
+    <div className='row shadow-sm rounded p-2 m-1'>
       <table>
         <tbody>
           <tr>
@@ -43,10 +50,12 @@ const Product = ({ item, t }) => {
               {t(item.name)}
             </td>
             <td rowSpan='3'>
-              <Figure.Image
-                className='mb-2'
-                width={150}
-                height={150}
+              <Image
+                style={{
+                  objectFit: 'cover',
+                }}
+                className='img-responsive overflow-hidden mw-100'
+                height='125'
                 src={item.image}
               />
             </td>
