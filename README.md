@@ -94,6 +94,7 @@ Create a .env file with your firestore data
     "image": "https://www.image.com/10.jpg",
     "price": 50,
     "description": "Category Description",
+    "order": "1",
     "_id": "4K4T3ugnZkZWrheX6G3r"
   }
   ```

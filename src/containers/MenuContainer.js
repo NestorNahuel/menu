@@ -12,7 +12,7 @@ import {
 
 const MenuContainer = () => {
   const productsQuery = useQueryData(COLL_PRODUCT, firestore)
-  const categoriesQuery = useQueryData(COLL_CATEGORY, firestore)
+  const categoriesQuery = useQueryData(COLL_CATEGORY, firestore, 'order')
   const subcategoriesQuery = useQueryData(COLL_SUBCATEGORY, firestore)
   const allergensQuery = useQueryData(COLL_ALLERGEN, firestore)
 

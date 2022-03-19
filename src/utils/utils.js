@@ -13,3 +13,24 @@ export const groupListByKey = (list, groupBy) =>
     group[key].push(item)
     return group
   }, {})
+
+export const orderByField = (data, orderBy) => {
+  if (orderBy && data?.length) {
+    return data.sort((a, b) => {
+      const first = (a && a[orderBy]) || ''
+      const second = (b && b[orderBy]) || ''
+      const result = first - second
+      if (result) {
+        return result
+      }
+      if (first < second) {
+        return -1
+      }
+      if (first > second) {
+        return 1
+      }
+      return 0
+    })
+  }
+  return data
+}
