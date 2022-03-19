@@ -44,6 +44,7 @@ const Menu = () => {
           loading={menuData.loadingProducts}
           error={menuData.error}
           component={Product}
+          categoryId={category._id}
           productList={getCategoryProducts(menuData.products, category._id)}
         />
       </>

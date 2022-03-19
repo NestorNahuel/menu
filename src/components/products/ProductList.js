@@ -2,10 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ItemList from '../common/ItemList'
 import { useMenu } from '../../contexts/menuContext'
-import { groupListByKey } from '../../utils/utils'
+import {
+  getCategorySubcategories,
+  groupListByKey,
+  orderByField,
+} from '../../utils/utils'
 import SubcategoryHeader from '../subcategories/SubcategoryHeader'
+import { EMPTY_GROUP_KEY } from '../../utils/constants'
 
-const ProductList = ({ productList, loading, error, ...props }) => {
+const ProductList = ({ productList, categoryId, loading, error, ...props }) => {
   const { subcategories } = useMenu()
 
   const renderProductList = (list) => (
@@ -25,12 +30,17 @@ const ProductList = ({ productList, loading, error, ...props }) => {
 
   // Rendering
 
-  if (!subcategories?.length || !productList?.length || loading || error) {
+  const subcategoriesList = getCategorySubcategories(subcategories, categoryId)
+
+  if (!subcategoriesList?.length || !productList?.length || loading || error) {
     return renderProductList(productList)
   }
 
-  const productGroups = groupListByKey(productList, 'subcategory')
-  const subcategoryGroups = groupListByKey(subcategories, '_id')
+  const productGroups = groupListByKey(
+    orderByField(productList, 'subcategory'),
+    'subcategory'
+  )
+  const subcategoryGroups = groupListByKey(subcategoriesList, '_id')
   const productsCategoriesId = Object.keys(productGroups)
 
   // If there is only a subcategory
@@ -38,16 +48,18 @@ const ProductList = ({ productList, loading, error, ...props }) => {
     return renderProductList(productList)
   }
 
-  return productsCategoriesId.map(
-    (key) =>
+  return productsCategoriesId.map((key) => {
+    if (key === EMPTY_GROUP_KEY) return renderProductList(productGroups[key])
+    return (
       subcategoryGroups[key] &&
       renderProductSubList(subcategoryGroups[key][0], productGroups[key])
-  )
+    )
+  })
 }
 
 ProductList.propTypes = {
   productList: PropTypes.array,
-
+  categoryId: PropTypes.string,
   loading: PropTypes.bool,
   error: PropTypes.bool,
 }
