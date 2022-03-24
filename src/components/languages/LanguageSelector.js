@@ -4,7 +4,12 @@ import ItemList from '../common/ItemList'
 import LanguageItem from './LanguageItem'
 
 const LanguageSelector = ({ list, changeLanguage }) => (
-  <ItemList component={LanguageItem} list={list} onClick={changeLanguage} />
+  <ItemList
+    disableScroll
+    component={LanguageItem}
+    list={list}
+    onClick={changeLanguage}
+  />
 )
 
 LanguageSelector.propTypes = {

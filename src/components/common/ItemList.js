@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Spinner from './Spinner'
 import Message from './Message'
@@ -11,9 +11,14 @@ const ItemList = ({
   loading,
   error,
   centered,
+  disableScroll = false,
   t,
   ...props
 }) => {
+  useEffect(() => {
+    !disableScroll && window.scrollTo(0, 0)
+  }, [])
+
   // Show loading spinner
   if (loading) {
     return <Spinner centered={centered} />
@@ -54,6 +59,7 @@ ItemList.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.bool,
   centered: PropTypes.bool,
+  disableScroll: PropTypes.bool,
   t: PropTypes.func,
 }
 
