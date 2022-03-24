@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Spinner from './Spinner'
 import Message from './Message'
 import FadeIn from 'react-fade-in'
+import { withTranslation } from 'react-i18next'
 
 const ItemList = ({
   component: Component,
@@ -10,9 +11,14 @@ const ItemList = ({
   loading,
   error,
   centered,
+  disableScroll = false,
   t,
   ...props
 }) => {
+  useEffect(() => {
+    !disableScroll && window.scrollTo(0, 0)
+  }, [])
+
   // Show loading spinner
   if (loading) {
     return <Spinner centered={centered} />
@@ -20,7 +26,7 @@ const ItemList = ({
 
   // Show no data message when the list is empty
   if (!list?.length && !error) {
-    return <Message message={t('There are not items to show')} />
+    return <Message message={t('noData')} />
   }
 
   // Render the list if Items
@@ -44,7 +50,7 @@ const ItemList = ({
   }
 
   // Show error message
-  return <Message message={t('There was an error')} />
+  return <Message message={t('loadingError')} />
 }
 
 ItemList.propTypes = {
@@ -53,7 +59,8 @@ ItemList.propTypes = {
   loading: PropTypes.bool,
   error: PropTypes.bool,
   centered: PropTypes.bool,
+  disableScroll: PropTypes.bool,
   t: PropTypes.func,
 }
 
-export default ItemList
+export default withTranslation('common')(ItemList)

@@ -5,7 +5,9 @@ import { COLL_TRANSLATIONS, DEFAULT_LANG } from '../utils/constants'
 import { I18nextProvider } from 'react-i18next'
 import i18next from 'i18next'
 import Spinner from '../components/common/Spinner'
-import LanguageSelector from '../components/languages/LanguageSelector'
+import { LanguageProvider } from '../contexts/languageContext'
+import MenuContainer from './MenuContainer'
+import spanish from '../locale/spanish.json'
 
 const LanguageContainer = () => {
   const translationsQuery = useQueryData(COLL_TRANSLATIONS, firestore)
@@ -24,13 +26,16 @@ const LanguageContainer = () => {
         }
       }
     */
-    let data = {}
-    let headers = []
+    let data = { es: spanish }
+    let headers = { es: spanish.common.languageName }
     translations.forEach((translation) => {
-      // Build the formatted language list
-      data[translation._id] = { common: translation }
-      // Build the language headers for the language selector
-      headers.push({ label: translation.languageName, slug: translation._id })
+      const languageName = translation.languageName
+      if (languageName) {
+        // Build the formatted language list
+        data[translation._id] = { common: translation }
+        // Build the language headers for the language selector
+        headers[translation._id] = languageName
+      }
     })
     return { data, headers }
   }
@@ -60,7 +65,9 @@ const LanguageContainer = () => {
 
   return (
     <I18nextProvider i18n={i18next}>
-      <LanguageSelector list={languageList} changeLanguage={changeLanguage} />
+      <LanguageProvider value={[languageList, changeLanguage]}>
+        <MenuContainer />
+      </LanguageProvider>
     </I18nextProvider>
   )
 }

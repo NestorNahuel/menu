@@ -5,9 +5,11 @@ import LanguageContainer from '../../containers/LanguageContainer'
 function App() {
   const queryClient = new QueryClient()
   return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageContainer />
-    </QueryClientProvider>
+    <div style={{ fontFamily: 'Montserrat', fontSize: '0.9em' }}>
+      <QueryClientProvider client={queryClient}>
+        <LanguageContainer />
+      </QueryClientProvider>
+    </div>
   )
 }
 

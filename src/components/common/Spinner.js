@@ -5,11 +5,11 @@ import { Spinner as BootstrapSpinner } from 'react-bootstrap'
 const Spinner = ({ centered }) => {
   return (
     <div
-      className={`vh-100 d-flex justify-content-center${
+      className={`m-2 vh-100 d-flex justify-content-center${
         centered ? ' align-items-center' : ''
       }`}
     >
-      <BootstrapSpinner animation='border' variant='success' />
+      <BootstrapSpinner animation='border' variant='secondary' />
     </div>
   )
 }

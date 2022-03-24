@@ -35,14 +35,20 @@ Create a .env file with your firestore data
   {
       en: {
         common: {
-          languageName: 'English',
-          hi: 'Hello'
+          "languageName": "English",
+          "loadingError": "There was an error",
+          "noData": "Data not found",
+          "headerLabel": "Menu",
+          "selectLang": "Select language"
         }
       },
       es: {
         common: {
-          languageName: 'Spanish',
-          hi: 'Hola'
+          "languageName": "Spanish",
+          "loadingError": "Ocurrió un error al cargar los datos",
+          "noData": "No hay items para mostrar",
+          "headerLabel": "NUESTRA CARTA",
+          "selectLang": "Seleccione su lenguaje"
         }
       }
   }
@@ -61,9 +67,19 @@ Create a .env file with your firestore data
     "image": "https://www.image.com/1.jpg",
     "allergens": ["GaHK2ETnkW4pu7tFmc2K"],
     "categories": ["4K4T3ugnZkZWrheX6G3r"],
+    "subcategory": "4K4T3subZkZWrheX6G3r",
     "name": "Product 1",
     "description": "Product description",
-    "price": "100",
+    "prices": [
+      {
+        description: "Basic product",
+        price: "100"
+      },
+      {
+        description: "XXL Product",
+        price: "150"
+      }
+    ],
     "_id": "YHXcfzMZomzJwwA5ThFg"
   }
   ```
@@ -76,7 +92,25 @@ Create a .env file with your firestore data
   {
     "name": "Catname 1",
     "image": "https://www.image.com/10.jpg",
+    "price": 50,
+    "description": "Category Description",
+    "order": "1",
     "_id": "4K4T3ugnZkZWrheX6G3r"
+  }
+  ```
+
+  The price and description will be displayed in the product list top
+
+  - `Subcategories`
+
+  Array of objects with this structure
+
+  ```
+  {
+    "name": "Catname 1",
+    "price": 50,
+    "description": "Category Description",
+    "_id": "4K4T3subZkZWrheX6G3r"
   }
   ```
 

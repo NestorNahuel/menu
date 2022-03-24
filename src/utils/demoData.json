@@ -1,61 +1,333 @@
 {
-  "allergens": [
+  "products": [
     {
-      "name": "Huevos",
-      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/huevos-alergenos-alimentarios-icono.png",
-      "_id": "GaHK2ETnkW4pu7tFmc2K"
+      "identifier": "p01a",
+      "image": "https://cdn.pixabay.com/photo/2020/06/16/12/11/salad-5305423_960_720.jpg",
+      "subcategory": "dish1",
+      "name": "Ensalada gourmet de la casa 1",
+      "categories": ["menu1", "salads"],
+      "description": "Lechuga, tomate, huevo, cebolla y atún con vinagreta de aceite de oliva virgen extra y vinagre de módena.",
+      "allergens": ["dairy", "gluten", "eggs"],
+      "_id": "p01a"
     },
     {
-      "name": "Pescado",
-      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/pescado-alergenos-alimentarios-icono.png",
-      "_id": "N46um0cjjFeUCnCHFOVE"
+      "image": "https://cdn.pixabay.com/photo/2020/06/16/12/11/salad-5305423_960_720.jpg",
+      "name": "Ensalada gourmet de la casa 2",
+      "identifier": "p01b",
+      "allergens": ["dairy", "gluten", "eggs"],
+      "description": "Lechuga, tomate, huevo, cebolla y atún con vinagreta de aceite de oliva virgen extra y vinagre de módena.",
+      "subcategory": "dish2",
+      "categories": ["menu1", "salads"],
+      "_id": "p01b"
     },
     {
-      "name": "Lácteos",
-      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/lacteos-alergenos-alimentarios-icono.png",
-      "_id": "igfJLa40VX4qYZmppbAU"
+      "allergens": ["dairy", "gluten", "eggs"],
+      "identifier": "p02a",
+      "subcategory": "dish1",
+      "image": "https://static3.abc.es/media/bienestar/2019/11/06/crema-calabaza-kE4H--510x349@abc.jpeg",
+      "name": "Crema de Calabaza con picatostes 1",
+      "categories": ["menu1"],
+      "description": "Lechuga, tomate, huevo, cebolla y atún con vinagreta de aceite de oliva virgen extra y vinagre de módena.",
+      "_id": "p02a"
     },
     {
-      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/gluten-alergenos-alimentarios-icono.png",
-      "name": "Gluten",
-      "_id": "ipTMA2xRSBzfbA54ds3b"
+      "identifier": "p02b",
+      "categories": ["menu1"],
+      "allergens": ["dairy", "gluten", "eggs"],
+      "description": "Lechuga, tomate, huevo, cebolla y atún con vinagreta de aceite de oliva virgen extra y vinagre de módena.",
+      "subcategory": "dish2",
+      "image": "https://static3.abc.es/media/bienestar/2019/11/06/crema-calabaza-kE4H--510x349@abc.jpeg",
+      "name": "Crema de Calabaza con picatostes 2",
+      "_id": "p02b"
+    },
+    {
+      "description": "Lechuga, tomate, huevo, cebolla y atún con vinagreta de aceite de oliva virgen extra y vinagre de módena.",
+      "name": "Salmón a la plancha con verduras 1",
+      "image": "https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/10/como-preparar-salmon-la-plancha-con-verduras.jpg",
+      "categories": ["menu1"],
+      "identifier": "p03a",
+      "subcategory": "dish1",
+      "allergens": ["dairy", "gluten", "eggs"],
+      "_id": "p03a"
+    },
+    {
+      "identifier": "p03b",
+      "description": "Lechuga, tomate, huevo, cebolla y atún con vinagreta de aceite de oliva virgen extra y vinagre de módena.",
+      "categories": ["menu1"],
+      "image": "https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/10/como-preparar-salmon-la-plancha-con-verduras.jpg",
+      "name": "Salmón a la plancha con verduras 2",
+      "subcategory": "dish2",
+      "allergens": ["dairy", "gluten", "eggs"],
+      "_id": "p03b"
+    },
+    {
+      "name": "Chicken maxi burger",
+      "allergens": ["dairy", "gluten", "eggs"],
+      "categories": ["burgers"],
+      "prices": [
+        {
+          "description": "Carne de ternera",
+          "price": "10,00"
+        },
+        {
+          "description": "Carne de cerdo",
+          "price": "15,00"
+        },
+        {
+          "price": "20,00",
+          "description": "Carne de pollo"
+        }
+      ],
+      "identifier": "p04",
+      "description": "Queso idiazábal, cebolla crujiente, lechuga, y tomate cherri confitado, con pan de semillas y  levadura de cerveza.",
+      "image": "https://cdn.pixabay.com/photo/2018/02/26/21/44/hamburger-3184108_960_720.png",
+      "_id": "p04"
+    },
+    {
+      "categories": ["burgers"],
+      "identifier": "p05",
+      "name": "SuperMaxi Burger",
+      "prices": [
+        {
+          "description": "",
+          "price": "00,00"
+        }
+      ],
+      "allergens": ["dairy", "gluten", "eggs"],
+      "image": "https://cdn.pixabay.com/photo/2018/02/26/21/44/hamburger-3184108_960_720.png",
+      "description": "Queso idiazábal, cebolla crujiente, lechuga, y tomate cherri confitado, con pan de semillas y  levadura de cerveza.",
+      "_id": "p05"
+    },
+    {
+      "description": "LECHUGA, TOMATE CHERRY, PICATOSTES, PECHUGA DE POLLO A LA PLANCHA, QUESO PARMESANO Y SALSA CESAR",
+      "identifier": "p06",
+      "image": "https://www.recetasderechupete.com/wp-content/uploads/2020/10/Ensalada-Cesar-final_.jpg",
+      "categories": ["salads"],
+      "prices": [
+        {
+          "price": "10,00",
+          "description": "Simple"
+        },
+        {
+          "description": "XXL",
+          "price": "15,00"
+        }
+      ],
+      "name": "ENSALADA CÉSAR",
+      "allergens": ["gluten", "dairy"],
+      "_id": "p06"
+    },
+    {
+      "allergens": ["gluten"],
+      "identifier": "p07",
+      "name": "ENSALADA MEDITERRÁNEA CLÁSICA",
+      "image": "https://estaticos.miarevista.es/media/cache/760x570_thumb/uploads/images/recipe/5d1de76b5bafe804b488438c/ensaladamediterranea-int.jpg",
+      "categories": ["salads"],
+      "_id": "p07"
+    },
+    {
+      "image": "https://www.comedera.com/wp-content/uploads/2015/10/ensalada-de-pollo.jpg",
+      "allergens": ["gluten"],
+      "identifier": "p08",
+      "name": "ENSALADA DE POLLO",
+      "categories": ["salads"],
+      "prices": [
+        {
+          "price": "10,00",
+          "description": ""
+        }
+      ],
+      "_id": "p08"
+    },
+    {
+      "categories": ["salads"],
+      "prices": [
+        {
+          "description": "",
+          "price": "10,00"
+        }
+      ],
+      "allergens": ["gluten"],
+      "name": "ENSALADA W-DA",
+      "identifier": "p09",
+      "image": "https://www.comedera.com/wp-content/uploads/2015/10/ensalada-de-pollo.jpg",
+      "_id": "p09"
+    },
+    {
+      "categories": ["salads"],
+      "prices": [
+        {
+          "description": "",
+          "price": "10,00"
+        }
+      ],
+      "allergens": ["gluten"],
+      "identifier": "p10",
+      "name": "ENSALADA W-ADA",
+      "_id": "p10"
+    },
+    {
+      "description": "LECHUGA, TOMATE CHERRY, PICATOSTES, PECHUGA DE POLLO A LA PLANCHA, QUESO PARMESANO Y SALSA CESAR",
+      "name": "ENSALADA X",
+      "identifier": "p11",
+      "categories": ["salads"],
+      "prices": [
+        {
+          "description": "Simple",
+          "price": "10,00"
+        },
+        {
+          "price": "15,00",
+          "description": "XXL"
+        }
+      ],
+      "allergens": ["gluten", "dairy"],
+      "_id": "p11"
+    },
+    {
+      "identifier": "p12a",
+      "categories": ["pizzas"],
+      "prices": [
+        {
+          "description": "",
+          "price": "10"
+        }
+      ],
+      "name": "La marinara",
+      "description": "Salsa de tomate, orégano, ajo, aceite de oliva, albahaca y una pizca de sal.",
+      "allergens": ["gluten"],
+      "image": "https://www.paulinacocina.net/wp-content/uploads/2017/04/2-640x427.jpg",
+      "_id": "p12a"
+    },
+    {
+      "image": "https://blog.pedidosya.com.ar/wp-content/uploads/sites/5/2018/05/pizza-con-muzzarella.jpg",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "prices": [
+        {
+          "price": "10",
+          "description": ""
+        }
+      ],
+      "name": "Muzzarella",
+      "categories": ["pizzas"],
+      "identifier": "p12b",
+      "allergens": ["gluten", "dairy"],
+      "_id": "p12b"
+    },
+    {
+      "name": "Napolitana",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "image": "https://blog.pedidosya.com.ar/wp-content/uploads/sites/5/2018/05/pizza-napolitana.jpg",
+      "categories": ["pizzas"],
+      "prices": [
+        {
+          "description": "",
+          "price": "10"
+        }
+      ],
+      "identifier": "p12c",
+      "allergens": ["gluten", "dairy"],
+      "_id": "p12c"
+    },
+    {
+      "identifier": "p12d",
+      "name": "Fugazzeta",
+      "prices": [
+        {
+          "description": "",
+          "price": "10"
+        }
+      ],
+      "allergens": ["gluten", "dairy"],
+      "image": "https://blog.pedidosya.com.ar/wp-content/uploads/sites/5/2018/05/pizza-fugazzeta.png",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "categories": ["pizzas"],
+      "_id": "p12d"
+    },
+    {
+      "allergens": ["dairy", "gluten", "eggs"],
+      "identifier": "pnew1",
+      "image": "https://cdn.pixabay.com/photo/2020/06/16/12/11/salad-5305423_960_720.jpg",
+      "description": "Lechuga, tomate, huevo, cebolla y atún con vinagreta de aceite de oliva virgen extra y vinagre de módena.",
+      "categories": [],
+      "name": "Ensalada sin subcategoría",
+      "_id": "pnew1"
     }
   ],
   "categories": [
     {
+      "image": "https://cdn.pixabay.com/photo/2014/09/17/20/26/restaurant-449952_960_720.jpg",
+      "identifier": "menu1",
+      "order": "1",
+      "price": "12.99",
+      "description": "Pan, agua o vino o refresco y cafe incluido",
+      "name": "Menú del día",
+      "_id": "menu1"
+    },
+    {
+      "name": "Nuestras Pizzas",
+      "order": "2",
+      "image": "https://cdn.pixabay.com/photo/2016/04/09/09/22/pizza-1317699_960_720.jpg",
+      "identifier": "pizzas",
+      "_id": "pizzas"
+    },
+    {
+      "identifier": "burgers",
+      "image": "https://cdn.pixabay.com/photo/2017/08/12/18/59/snack-2635035_960_720.jpg",
+      "name": "Hamburguesas",
+      "order": "3",
+      "_id": "burgers"
+    },
+    {
+      "image": "https://cdn.pixabay.com/photo/2017/10/09/19/29/eat-2834549_960_720.jpg",
       "name": "Ensaladas",
-      "image": "https://estaticos.miarevista.es/media/cache/760x570_thumb/uploads/images/recipe/5d1de76b5bafe804b488438c/ensaladamediterranea-int.jpg",
-      "_id": "4K4T3ugnZkZWrheX6G3r"
+      "identifier": "salads",
+      "order": "4",
+      "_id": "salads"
     }
   ],
-  "products": [
+  "subcategories": [
     {
-      "image": "https://www.recetasderechupete.com/wp-content/uploads/2020/10/Ensalada-Cesar-final_.jpg",
-      "allergens": [
-        "GaHK2ETnkW4pu7tFmc2K",
-        "igfJLa40VX4qYZmppbAU",
-        "ipTMA2xRSBzfbA54ds3b"
-      ],
-      "categories": ["4K4T3ugnZkZWrheX6G3r"],
-      "name": "ENSALADA CÉSAR",
-      "description": "LECHUGA, TOMATE CHERRY, PICATOSTES, PECHUGA DE POLLO A LA PLANCHA, QUESO PARMESANO Y SALSA CESAR",
-      "price": "100",
-      "_id": "YHXcfzMZomzJwwA5ThFg"
+      "identifier": "dish1",
+      "category": "menu1",
+      "order": "1",
+      "description": "Uno a elegir",
+      "name": "Primeros platos",
+      "_id": "dish1"
     },
     {
-      "name": "ENSALADA MEDITERRÁNEA CLÁSICA",
-      "categories": ["4K4T3ugnZkZWrheX6G3r"],
-      "allergens": ["N46um0cjjFeUCnCHFOVE", "GaHK2ETnkW4pu7tFmc2K"],
-      "image": "https://estaticos.miarevista.es/media/cache/760x570_thumb/uploads/images/recipe/5d1de76b5bafe804b488438c/ensaladamediterranea-int.jpg",
-      "price": "200",
-      "_id": "uo70QL7bnpNjhOZCWBAJ"
+      "category": "menu1",
+      "order": "2",
+      "identifier": "dish2",
+      "name": "Segundos platos",
+      "description": "Uno a elegir",
+      "_id": "dish2"
+    }
+  ],
+  "allergens": [
+    {
+      "name": "Lácteos",
+      "identifier": "dairy",
+      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/lacteos-alergenos-alimentarios-icono.png",
+      "_id": "dairy"
     },
     {
-      "name": "ENSALADA MEDITERRÁNEA CLÁSICA 2",
-      "categories": ["4K4T3ugnZkZWrheX6G3r"],
-      "allergens": ["N46um0cjjFeUCnCHFOVE", "GaHK2ETnkW4pu7tFmc2K"],
-      "image": "https://estaticos.miarevista.es/media/cache/760x570_thumb/uploads/images/recipe/5d1de76b5bafe804b488438c/ensaladamediterranea-int.jpg",
-      "_id": "uo70QL7bnpNjhOZCWBAJ"
+      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/huevos-alergenos-alimentarios-icono.png",
+      "name": "Huevos",
+      "identifier": "eggs",
+      "_id": "eggs"
+    },
+    {
+      "identifier": "fish",
+      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/pescado-alergenos-alimentarios-icono.png",
+      "name": "Pescado",
+      "_id": "fish"
+    },
+    {
+      "image": "https://ingenieriademenu.com/wp-content/uploads/2020/11/gluten-alergenos-alimentarios-icono.png",
+      "name": "Gluten",
+      "identifier": "gluten",
+      "_id": "gluten"
     }
   ]
 }
